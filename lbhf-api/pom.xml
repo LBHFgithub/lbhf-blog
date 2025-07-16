@@ -2,33 +2,62 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
+    <!-- 父项目：Spring Boot 官方父POM -->
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>3.5.3</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <relativePath/>
     </parent>
+
+    <!-- 基本项目信息 -->
     <groupId>com.lbhf</groupId>
     <artifactId>lbhf-api</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
     <name>lbhf-api</name>
-    <description>lbhf-api</description>
-    <url/>
+    <description>LBHF个人博客后端API</description>
+    <url>https://github.com/LBHFgithub/lbhf-blog</url>
+
+    <!-- 许可证信息 -->
     <licenses>
-        <license/>
+        <license>
+            <name>MIT License</name>
+            <url>https://opensource.org/licenses/MIT</url>
+            <distribution>repo</distribution>
+        </license>
     </licenses>
+
+    <!-- 开发者信息 -->
     <developers>
-        <developer/>
+        <developer>
+            <id>lbhf</id>
+            <name>LBHF</name>
+            <email>your-email@example.com</email>
+            <url>https://github.com/LBHFgithub</url>
+            <roles>
+                <role>developer</role>
+            </roles>
+        </developer>
     </developers>
+
+    <!-- 源码管理信息 -->
     <scm>
-        <connection/>
-        <developerConnection/>
-        <tag/>
-        <url/>
+        <connection>scm:git:git://github.com/LBHFgithub/lbhf-blog.git</connection>
+        <developerConnection>scm:git:ssh://github.com:LBHFgithub/lbhf-blog.git</developerConnection>
+        <url>https://github.com/LBHFgithub/lbhf-blog</url>
+        <tag>HEAD</tag>
     </scm>
+
+    <!-- 项目属性 -->
     <properties>
         <java.version>17</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
+
+    <!-- 依赖管理 -->
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -40,8 +69,32 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <!-- web-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <!-- MyBatis-Plus -->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
+            <version>3.5.4.1</version>
+        </dependency>
+        <!-- MySQL驱动 -->
+        <dependency>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
+            <version>8.0.33</version>
+        </dependency>
+        <!-- Lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
     </dependencies>
 
+    <!-- 构建配置 -->
     <build>
         <plugins>
             <plugin>
